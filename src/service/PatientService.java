@@ -47,13 +47,13 @@ public class PatientService {
         System.out.println("Patient not found.");
     }
 
-    // Delete Patient by ID (FIXED)
+    
     public void deletePatient(int id) {
 
         for (int i = 0; i < patientList.size(); i++) {
             if (patientList.get(i).getPatientId() == id) {
 
-                patientList.remove(i);  // ✅ SAFE removal
+                patientList.remove(i);  
                 FileHandler.savePatients(patientList);
 
                 System.out.println("Patient deleted successfully!");
@@ -64,7 +64,7 @@ public class PatientService {
         System.out.println("Patient not found.");
     }
 
-    // ✅ IMPORTANT (needed for AppointmentService)
+    
     public ArrayList<Patient> getPatientList() {
         return patientList;
     }
